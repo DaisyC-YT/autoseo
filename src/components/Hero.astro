@@ -1,0 +1,155 @@
+---
+---
+
+<section class="relative pt-32 pb-24 overflow-hidden bg-white">
+  <!-- Background decoration -->
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-radial from-blue-50 via-violet-50/40 to-transparent opacity-70 rounded-full blur-3xl"></div>
+    <div class="absolute top-24 right-0 w-72 h-72 bg-blue-100/30 rounded-full blur-2xl"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-violet-100/30 rounded-full blur-2xl"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+      <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+      AI-Powered SEO Automation Platform
+    </div>
+
+    <!-- Headline -->
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight tracking-tight mb-6">
+      Stop doing SEO manually.<br class="hidden sm:block" />
+      <span class="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">Let Auto SEO do the work.</span>
+    </h1>
+
+    <!-- Subtext -->
+    <p class="max-w-2xl mx-auto text-lg text-gray-500 leading-relaxed mb-10">
+      Auto SEO combines AI crawling, intelligent keyword research, and real-time analytics
+      into one seamless platform — so your team can focus on strategy, not spreadsheets.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+      <a
+        href="#contact"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all"
+      >
+        Start Free Trial
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a
+        href="#services"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-gray-200 hover:border-gray-300 bg-white text-gray-700 font-semibold px-7 py-3.5 rounded-xl hover:bg-gray-50 transition-all"
+      >
+        See How It Works
+      </a>
+    </div>
+
+    <!-- Hero Visual / Dashboard Mock -->
+    <div class="relative max-w-4xl mx-auto">
+      <div class="bg-white border border-gray-100 rounded-2xl shadow-2xl shadow-gray-100/80 overflow-hidden">
+        <!-- Mock browser bar -->
+        <div class="flex items-center gap-1.5 px-4 py-3 bg-gray-50 border-b border-gray-100">
+          <span class="w-3 h-3 rounded-full bg-red-300"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-300"></span>
+          <span class="w-3 h-3 rounded-full bg-green-300"></span>
+          <div class="ml-3 flex-1 bg-white border border-gray-200 rounded-md px-3 py-1 text-xs text-gray-400 max-w-xs">
+            app.autoseo.io/dashboard
+          </div>
+        </div>
+
+        <!-- Dashboard content -->
+        <div class="p-6 bg-gradient-to-br from-slate-50 to-blue-50/30">
+          <!-- Top stat cards -->
+          <div class="grid grid-cols-3 gap-4 mb-4">
+            {[
+              { label: 'Keywords Tracked', value: '8,312', change: '+142 this week' },
+              { label: 'Pages Crawled', value: '24,087', change: 'Last run: 2h ago' },
+              { label: 'Avg. Position', value: '#4.2', change: '▲ 1.8 vs last month' },
+            ].map((stat) => (
+              <div class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+                <p class="text-xs text-gray-500 mb-1">{stat.label}</p>
+                <p class="text-2xl font-bold text-gray-900">{stat.value}</p>
+                <span class="inline-block text-xs font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full mt-1">
+                  {stat.change}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <!-- Keyword table mock -->
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-50 flex items-center justify-between">
+              <p class="text-sm font-semibold text-gray-700">Top Keyword Opportunities</p>
+              <span class="text-xs text-blue-600 font-medium cursor-pointer">View all →</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-xs">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="text-left px-4 py-2 text-gray-500 font-medium">Keyword</th>
+                    <th class="text-left px-4 py-2 text-gray-500 font-medium">Volume</th>
+                    <th class="text-left px-4 py-2 text-gray-500 font-medium">Difficulty</th>
+                    <th class="text-left px-4 py-2 text-gray-500 font-medium">Position</th>
+                    <th class="text-left px-4 py-2 text-gray-500 font-medium">Trend</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { kw: 'seo automation tool', vol: '12,100', diff: 'Medium', pos: '#7', trend: '▲', color: 'green' },
+                    { kw: 'keyword research ai', vol: '8,400', diff: 'Low', pos: '#12', trend: '▲', color: 'green' },
+                    { kw: 'auto site crawl', vol: '5,200', diff: 'Low', pos: '#3', trend: '→', color: 'gray' },
+                    { kw: 'seo analytics dashboard', vol: '4,900', diff: 'High', pos: '#18', trend: '▼', color: 'red' },
+                  ].map((row) => (
+                    <tr class="border-t border-gray-50 hover:bg-gray-50 transition-colors">
+                      <td class="px-4 py-2.5 text-gray-800 font-medium">{row.kw}</td>
+                      <td class="px-4 py-2.5 text-gray-600">{row.vol}</td>
+                      <td class="px-4 py-2.5">
+                        <span class={`px-2 py-0.5 rounded-full text-xs font-medium ${row.diff === 'Low' ? 'bg-green-50 text-green-600' : row.diff === 'Medium' ? 'bg-yellow-50 text-yellow-600' : 'bg-red-50 text-red-600'}`}>
+                          {row.diff}
+                        </span>
+                      </td>
+                      <td class="px-4 py-2.5 text-gray-700 font-semibold">{row.pos}</td>
+                      <td class={`px-4 py-2.5 font-bold ${row.color === 'green' ? 'text-green-500' : row.color === 'red' ? 'text-red-400' : 'text-gray-400'}`}>{row.trend}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating badges -->
+      <div class="absolute -left-6 top-1/3 bg-white border border-gray-100 shadow-lg rounded-xl px-4 py-3 items-center gap-2.5 hidden lg:flex">
+        <div class="w-9 h-9 rounded-lg bg-green-50 flex items-center justify-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/><polyline points="17,6 23,6 23,12"/></svg>
+        </div>
+        <div>
+          <p class="text-xs text-gray-500">Organic Traffic</p>
+          <p class="text-sm font-bold text-gray-900">+218% in 90 days</p>
+        </div>
+      </div>
+
+      <div class="absolute -right-6 bottom-1/3 bg-white border border-gray-100 shadow-lg rounded-xl px-4 py-3 items-center gap-2.5 hidden lg:flex">
+        <div class="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div>
+          <p class="text-xs text-gray-500">Keywords Found</p>
+          <p class="text-sm font-bold text-gray-900">3,400+ / scan</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust logos -->
+    <div class="mt-16">
+      <p class="text-sm text-gray-400 mb-6">Trusted by 500+ companies worldwide</p>
+      <div class="flex flex-wrap items-center justify-center gap-8 opacity-40 grayscale">
+        {['SHOPIFY PLUS', 'AGENCY X', 'ECOM CO.', 'STARTUP HUB', 'MEDIA GROUP'].map((name) => (
+          <span class="text-sm font-bold tracking-widest text-gray-600">{name}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

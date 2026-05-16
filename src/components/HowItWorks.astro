@@ -1,0 +1,76 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Connect Your Site',
+    desc: 'Add your domain and connect Google Search Console & GA4 in one click. Auto SEO immediately begins indexing your site structure — no developer needed.',
+    color: 'blue',
+  },
+  {
+    num: '02',
+    title: 'AI Crawl & Audit',
+    desc: 'Our crawler scans every page within minutes, detecting technical issues, content gaps, and crawlability problems. You get a prioritised fix list ranked by SEO impact.',
+    color: 'violet',
+  },
+  {
+    num: '03',
+    title: 'Keyword Discovery',
+    desc: 'AI surfaces your best keyword opportunities, clusters them by search intent, identifies competitor gaps, and maps them to your content calendar — automatically updated weekly.',
+    color: 'cyan',
+  },
+  {
+    num: '04',
+    title: 'Track, Analyse & Grow',
+    desc: 'Watch your rankings climb in the unified analytics dashboard. Receive AI-generated weekly reports with actionable insights, anomaly alerts, and ROI attribution per keyword.',
+    color: 'green',
+  },
+];
+
+const numColor: Record<string, string> = {
+  blue:   'text-blue-600 bg-blue-50 border-blue-100',
+  violet: 'text-violet-600 bg-violet-50 border-violet-100',
+  cyan:   'text-cyan-600 bg-cyan-50 border-cyan-100',
+  green:  'text-green-600 bg-green-50 border-green-100',
+};
+---
+
+<section id="how-it-works" class="py-24 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <span class="text-sm font-semibold text-blue-600 tracking-widest uppercase mb-3 block">How It Works</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Up and ranking in 4 steps</h2>
+      <p class="text-gray-500 max-w-xl mx-auto">
+        Most customers see measurable ranking improvements within the first 30 days. Setup takes under 5 minutes.
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {steps.map((step, i) => (
+        <div class="relative bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow">
+          <div class={`inline-flex items-center justify-center w-12 h-12 rounded-xl border font-black text-lg mb-5 ${numColor[step.color]}`}>
+            {step.num}
+          </div>
+
+          {i % 2 === 0 && (
+            <div class="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gray-200 z-10"></div>
+          )}
+
+          <h3 class="text-lg font-bold text-gray-900 mb-3">{step.title}</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <a
+        href="#contact"
+        class="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:text-blue-700 transition-colors"
+      >
+        Start your free trial — no credit card required
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

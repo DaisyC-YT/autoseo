@@ -1,0 +1,193 @@
+---
+const services = [
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+    color: 'blue',
+    tag: '01',
+    title: 'Auto SEO Crawl',
+    headline: 'Crawl every corner of your site — automatically.',
+    desc: 'Our AI crawler continuously scans your entire website to detect broken links, duplicate content, missing meta tags, slow pages, and crawl errors. Get a full technical SEO audit on autopilot — no manual setup required.',
+    bullets: [
+      'Scheduled crawls — daily, weekly, or on-deploy',
+      'Detects 50+ technical SEO issues',
+      'Prioritised issue list with fix recommendations',
+      'JavaScript rendering support (SPAs, Next.js, Nuxt)',
+    ],
+    tags: ['Crawler Bot', 'Core Web Vitals', 'Schema Validator'],
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v3l2 2"/></svg>`,
+    color: 'violet',
+    tag: '02',
+    title: 'Auto Keyword Research',
+    headline: 'Discover thousands of opportunities, instantly.',
+    desc: 'Enter a seed topic and Auto SEO\'s AI engine surfaces high-potential keywords, clusters them by intent, estimates traffic value, and maps them to your existing pages — all in seconds. No more hours lost in spreadsheets.',
+    bullets: [
+      'AI intent clustering (informational, transactional, navigational)',
+      'Competitor gap analysis — find keywords they rank for, you don\'t',
+      'Long-tail & question-based keyword discovery',
+      'Auto-mapped to content calendar & page suggestions',
+    ],
+    tags: ['NLP Engine', 'SERP Analysis', 'Competitor Gap'],
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/></svg>`,
+    color: 'green',
+    tag: '03',
+    title: 'Auto Data Analytics',
+    headline: 'Turn SEO data into decisions — automatically.',
+    desc: 'Connect Google Search Console, GA4, and your rank tracker in one click. Auto SEO synthesises all your SEO data into an intelligent dashboard with AI-generated insights, anomaly alerts, and weekly performance summaries.',
+    bullets: [
+      'Unified dashboard: rankings, traffic, CTR, impressions',
+      'AI-generated weekly insight reports (auto-emailed)',
+      'Anomaly detection — instant alert when rankings drop',
+      'ROI attribution: which keywords drive real revenue',
+    ],
+    tags: ['GSC Integration', 'GA4', 'AI Reports'],
+  },
+];
+
+const colorMap: Record<string, { icon: string; tag: string; border: string; bullet: string }> = {
+  blue:   { icon: 'bg-blue-50 text-blue-600',   tag: 'text-blue-600 bg-blue-50 border-blue-100',   border: 'hover:border-blue-200',   bullet: 'bg-blue-500' },
+  violet: { icon: 'bg-violet-50 text-violet-600', tag: 'text-violet-600 bg-violet-50 border-violet-100', border: 'hover:border-violet-200', bullet: 'bg-violet-500' },
+  green:  { icon: 'bg-green-50 text-green-600',  tag: 'text-green-600 bg-green-50 border-green-100',  border: 'hover:border-green-200',  bullet: 'bg-green-500' },
+};
+
+const tagPill: Record<string, string> = {
+  blue:   'bg-blue-50 text-blue-600',
+  violet: 'bg-violet-50 text-violet-600',
+  green:  'bg-green-50 text-green-600',
+};
+---
+
+<section id="services" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <span class="text-sm font-semibold text-blue-600 tracking-widest uppercase mb-3 block">Services</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Three tools. One platform. Full SEO automation.</h2>
+      <p class="text-gray-500 max-w-xl mx-auto">
+        Everything you need to dominate search rankings — without the manual grind. Auto SEO handles the work so your team can focus on growth.
+      </p>
+    </div>
+
+    <!-- Service Cards (large, feature-rich) -->
+    <div class="space-y-6">
+      {services.map((s, i) => (
+        <div class={`group bg-white border border-gray-100 rounded-2xl p-8 lg:p-10 hover:shadow-lg transition-all duration-200 ${colorMap[s.color].border} ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+          <div class="lg:flex gap-10 items-start">
+            <!-- Left: Text -->
+            <div class="flex-1 mb-8 lg:mb-0">
+              <div class="flex items-center gap-3 mb-4">
+                <div class={`w-12 h-12 rounded-xl flex items-center justify-center ${colorMap[s.color].icon}`} set:html={s.icon} />
+                <span class={`text-xs font-bold px-2.5 py-1 rounded-full border ${colorMap[s.color].tag}`}>{s.tag}</span>
+              </div>
+
+              <h3 class="text-2xl font-bold text-gray-900 mb-1">{s.title}</h3>
+              <p class="text-base font-medium text-gray-600 mb-4 italic">{s.headline}</p>
+              <p class="text-sm text-gray-500 leading-relaxed mb-6">{s.desc}</p>
+
+              <!-- Bullets -->
+              <ul class="space-y-2 mb-6">
+                {s.bullets.map((b) => (
+                  <li class="flex items-start gap-2.5 text-sm text-gray-700">
+                    <span class={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${colorMap[s.color].bullet}`}></span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+
+              <!-- Tags -->
+              <div class="flex flex-wrap gap-1.5">
+                {s.tags.map((t) => (
+                  <span class={`text-xs font-medium px-2.5 py-1 rounded-full ${tagPill[s.color]}`}>{t}</span>
+                ))}
+              </div>
+            </div>
+
+            <!-- Right: Mini visual -->
+            <div class="flex-shrink-0 lg:w-80">
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-5 shadow-sm">
+                {s.tag === '01' && (
+                  <!-- Crawl visual -->
+                  <div>
+                    <div class="flex items-center justify-between mb-3">
+                      <span class="text-xs font-semibold text-gray-600">Crawl Status</span>
+                      <span class="text-xs bg-green-50 text-green-600 font-medium px-2 py-0.5 rounded-full">Running</span>
+                    </div>
+                    {[
+                      { url: '/home', status: '200', issue: null },
+                      { url: '/blog/seo-tips', status: '200', issue: null },
+                      { url: '/services', status: '301', issue: 'Redirect' },
+                      { url: '/old-page', status: '404', issue: 'Broken' },
+                    ].map((r) => (
+                      <div class="flex items-center gap-2 py-1.5 border-b border-gray-100 last:border-0">
+                        <span class={`w-8 text-center text-xs font-bold rounded px-1 py-0.5 ${r.status === '200' ? 'bg-green-50 text-green-600' : r.status === '301' ? 'bg-yellow-50 text-yellow-600' : 'bg-red-50 text-red-500'}`}>{r.status}</span>
+                        <span class="flex-1 text-xs text-gray-600 truncate">{r.url}</span>
+                        {r.issue && <span class="text-xs text-red-400 font-medium">{r.issue}</span>}
+                      </div>
+                    ))}
+                    <div class="mt-3 flex items-center gap-2">
+                      <div class="flex-1 bg-gray-200 rounded-full h-1.5">
+                        <div class="bg-blue-500 h-1.5 rounded-full w-3/4"></div>
+                      </div>
+                      <span class="text-xs text-gray-500">3,241 / 4,300 pages</span>
+                    </div>
+                  </div>
+                )}
+                {s.tag === '02' && (
+                  <!-- Keyword visual -->
+                  <div>
+                    <div class="flex items-center justify-between mb-3">
+                      <span class="text-xs font-semibold text-gray-600">Keyword Clusters</span>
+                      <span class="text-xs text-violet-600 font-medium">AI Generated</span>
+                    </div>
+                    {[
+                      { cluster: 'SEO Tools', count: '312 keywords', vol: '180K/mo' },
+                      { cluster: 'Content SEO', count: '218 keywords', vol: '95K/mo' },
+                      { cluster: 'Technical SEO', count: '156 keywords', vol: '62K/mo' },
+                    ].map((c) => (
+                      <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-0">
+                        <div>
+                          <p class="text-xs font-semibold text-gray-800">{c.cluster}</p>
+                          <p class="text-xs text-gray-400">{c.count}</p>
+                        </div>
+                        <span class="text-xs font-bold text-violet-600 bg-violet-50 px-2 py-0.5 rounded-full">{c.vol}</span>
+                      </div>
+                    ))}
+                    <div class="mt-3 bg-violet-50 rounded-lg px-3 py-2 text-xs text-violet-700 font-medium">
+                      💡 3 quick-win opportunities found
+                    </div>
+                  </div>
+                )}
+                {s.tag === '03' && (
+                  <!-- Analytics visual -->
+                  <div>
+                    <div class="flex items-center justify-between mb-3">
+                      <span class="text-xs font-semibold text-gray-600">Weekly Summary</span>
+                      <span class="text-xs text-green-600 font-medium bg-green-50 px-2 py-0.5 rounded-full">+12.4%</span>
+                    </div>
+                    {[
+                      { metric: 'Organic Clicks', value: '24,812', delta: '+18%', up: true },
+                      { metric: 'Avg. Position', value: '#4.1', delta: '▲0.8', up: true },
+                      { metric: 'Indexed Pages', value: '1,204', delta: '+32', up: true },
+                      { metric: 'CTR', value: '4.7%', delta: '-0.2%', up: false },
+                    ].map((m) => (
+                      <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-0">
+                        <span class="text-xs text-gray-500">{m.metric}</span>
+                        <div class="flex items-center gap-2">
+                          <span class="text-xs font-bold text-gray-800">{m.value}</span>
+                          <span class={`text-xs font-medium ${m.up ? 'text-green-500' : 'text-red-400'}`}>{m.delta}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
